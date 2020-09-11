@@ -1,0 +1,23 @@
+.Header{
+    display: flex;
+    border-bottom: #fff 3px solid;
+    background-color: #000;
+}
+.Header_Text{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    flex:1;
+  
+}
+.SignOut_Button{
+    color: black;
+    font-size: large;
+    margin-right: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 5vh;
+    border-color: blanchedalmond;
+    background-color: red;
+    cursor: pointer;
+}

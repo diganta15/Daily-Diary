@@ -1,0 +1,15 @@
+.Main_Content{
+   display: flex;
+}
+.Sidebar{
+    flex:1;
+    border-right    : 1px solid black;
+    margin-left: 20px ;
+    padding-right: 20px;
+    height: 100vh;
+}
+
+.Content{
+    flex:4;
+    text-align: center;
+}
