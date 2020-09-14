@@ -1,15 +1,85 @@
-.Main_Content{
-   display: flex;
+.Main_Content {
+	display: flex;
 }
-.Sidebar{
-    flex:1;
-    border-right    : 1px solid black;
-    margin-left: 20px ;
-    padding-right: 20px;
-    height: 100vh;
+.Sidebar {
+	flex: 1;
+	border-right: 1px solid black;
+	margin-left: 20px;
+	padding-right: 20px;
+	height: 100vh;
 }
 
-.Content{
-    flex:4;
+.Content {
+	flex: 4;
+	text-align: center;
+}
+
+.title {
+	color: white;
+	background-color: #000;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	flex: 3;
+}
+
+.title input {
+	border: none;
+	font-size: large;
+	color: white;
+	background-color: #000;
+}
+
+.content_view {
+	display: flex;
+	background-color: #000;
+}
+
+.edit {
+	flex: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.edit_button {
+	padding: 8px 20px 8px 20px;
+	margin-top: 35px;
+	margin-right: 5px;
+	background-color: #606ee7;
+	border-radius: 3px;
+}
+
+.content_edit .title {
+	display: flex;
+}
+
+.document_title {
+    flex: 5;
     text-align: center;
+}
+
+.save {
+	flex: 0;
+	padding: 8px 20px 8px 20px;
+    margin-right: 10px;
+    background-color: #A5DDB8;
+}
+
+.add_button{
+	font-size: large;
+	font-weight: 30rem;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	cursor: pointer;
+}
+
+.notebook_nameInput{
+	width: 100%;
+	height: 30px;
+}
+.notebook_overlayButtons{
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	justify-content: space-between;
 }

@@ -2,6 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router-dom';
 import firebaseConfig from './firebase'
 import { AuthContext } from './Auth';
+import {UserDetails} from './userDetails'; 
 
 const Login = ({ history }) => {
     const handleLogIn = useCallback(async event => {
@@ -18,7 +19,8 @@ const Login = ({ history }) => {
         }
     }, [history]);
     const {currentUser} = useContext(AuthContext);
-    // console.log(currentUser)
+    if (currentUser) { localStorage.setItem('userId', currentUser.email);}
+ 
     if(currentUser){
         return <Redirect to="/" />
         

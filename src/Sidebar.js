@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react';
 import './Sidebar.css';
 import firebaseConfig from './firebase';
 import Notebooks from './Notebooks';
+import AddNotebook from './AddNotebook' 
 
 
 
@@ -11,12 +12,13 @@ function Sidebar() {
 const [diary, setDiary] = useState([]);
 const [data, setData] = useState([])
 
+    const userId = localStorage.getItem("userId");
 
     useEffect(() => {
         firebaseConfig.
         firestore()
         .collection('diary')
-            .where('userId', '==', '12345')
+            .where('userId', '==', userId)
         .onSnapshot(snapshot =>{
             setData(snapshot.docs.map(doc =>({id:doc.id, info:doc.data()})))
         })
@@ -37,6 +39,7 @@ console.log(data)
                         </div>
                     ))
                 }
+                <AddNotebook />
            </div>
         </div>
     )
