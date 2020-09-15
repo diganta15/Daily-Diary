@@ -34,7 +34,7 @@ console.log(data)
                 {
                     data.map(({ id, info }) => (
                         <div className="">
-                            <Notebooks diaryName={info.name} diaryId={info.diaryId} />
+                            <Notebooks diaryName={info.name} diaryId={info.diaryId} docId={id}    />
                             
                         </div>
                     ))
