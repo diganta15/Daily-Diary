@@ -5,6 +5,7 @@ function Section({diaryId}) {
     const [section, setSection] = useState([])
 
     useEffect(() => {
+        console.log(diaryId)
         firebaseConfig.
             firestore()
             .collection('section')

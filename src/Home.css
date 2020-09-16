@@ -83,3 +83,17 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+.add_section{
+	width: 100%;
+	align-items: center;
+}
+.add_section input{
+	width: 100%;
+	height: 4vh;
+}
+.add_section-buttons{
+	display: flex;
+	justify-content: space-between;
+	margin: 5px 20px 5px 20px;
+}
