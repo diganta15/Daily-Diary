@@ -39,3 +39,26 @@
   height: 30px;
   cursor: pointer;
 }
+.section{
+  display: flex;
+  flex-direction: column;
+}
+
+.section .visible .section-li ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.section .visible .section-li ul:hover{
+  border: 0.8px black solid;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.section .visible .section-li ul:active{
+  border: 1px black solid;
+  border-radius: 3px;
+  cursor: pointer;
+}

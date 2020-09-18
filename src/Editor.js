@@ -7,8 +7,7 @@ function Editor() {
         <div>
             <CKEditor editor={ClassicEditor}  
                 config={{
-                    toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'numberedList', 'bulletedList', 'imageUpload', 'insertTable',
-                        'tableColumn', 'tableRow', 'mergeTableCells', '|', 'undo', 'redo']
+                    toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'numberedList', 'bulletedList', 'imageUpload', '|', 'undo', 'redo']
                 }} />
         </div>
     )

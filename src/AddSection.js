@@ -7,6 +7,8 @@ import { generatePushID } from './generateId';
 function AddSection({diaryId, docId, diaryName, setAddSectionOverlay}) {
     const [section, setSection] = useState('');
     
+    const id = generatePushID();
+
     const addSection = ()=> {
         console.log(diaryId);
 
@@ -14,6 +16,7 @@ function AddSection({diaryId, docId, diaryName, setAddSectionOverlay}) {
             {
                 diaryId: diaryId,
                 title: section,
+                id:id,
                 
             }
         ).then(() => {

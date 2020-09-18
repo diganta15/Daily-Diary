@@ -42,8 +42,10 @@ function Notebooks({ diaryName, diaryId, docId }) {
             {addSectionOverlay && <div>
                 <AddSection diaryId={diaryId} docId={docId} diaryName={diaryName} setAddSectionOverlay={setAddSectionOverlay}/>
             </div>}
-            <div className={sectionOverlay ? "hidden" : "visible"}>
-                <Section diaryId={diaryId} />
+            <div className="section">
+                <div className={sectionOverlay ? "hidden" : "visible"}>
+                    <Section diaryId={diaryId} />
+                </div>
             </div>
         </div>
     )
