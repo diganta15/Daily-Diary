@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Editor from './Editor';
 import firebaseConfig from './firebase';
 import firebase from 'firebase';
-
+import MainContent from './MainContent'
 
 
 function Content({ selectedSection }) {
     const [edit, setEdit] = useState(false);
     const [title, setTitle] = useState('');
     const [save, setSave] = useState([]);
-    const [editorData, setEditorData] = useState();
+    const [editorData, setEditorData] = useState('');
     const [receivedData, setReceivedData] = useState();
-    const [dataId, setDataId] = useState('');
+    const [displayTitle, setDisplayTitle] = useState('');
 
-   
+
 
     const editHandler = () => {
         setEdit(!edit);
@@ -24,7 +24,7 @@ function Content({ selectedSection }) {
 
     }
     const saveHandler = () => {
-        
+
         console.log(selectedSection)
         setEdit(!edit)
         console.log(editorData);
@@ -76,7 +76,6 @@ function Content({ selectedSection }) {
 
     }
 
-
     console.log(receivedData)
     return (
         <div className="Content">
@@ -91,16 +90,21 @@ function Content({ selectedSection }) {
 
                                 </div>
                                 <div className="editor">
-                                    <Editor selectedSection={selectedSection} edit={edit} setEdit={setEdit} editorData={editorData} setEditorData={setEditorData} receivedData={receivedData} />
+                                    <Editor setDisplayTitle={setDisplayTitle} selectedSection={selectedSection} edit={edit} setEdit={setEdit} editorData={editorData} setEditorData={setEditorData} receivedData={receivedData} />
                                 </div>
-                            </div> : <div className="content_view">
-                                <div className="title">
-                                    <h1>{title}</h1>
+                            </div> : <div>
+                                <div className="content_view">
+                                    <div className="title">
+                                        <h1>{title}</h1>
+                                    </div>
+                                    <div className="edit">
+                                        <button onClick={editHandler} className="edit_button">Edit</button>
+                                    </div>
                                 </div>
-                                <div className="edit">
-                                    <button onClick={editHandler} className="edit_button">Edit</button>
-                                </div>
-                            </div>}
+                                <view>
+                                    <MainContent selectedSection={selectedSection} />
+                                </view>
+                                </div>}
                     </div>}
                 </div>}
         </div>

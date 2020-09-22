@@ -2,8 +2,9 @@ import React from 'react';
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-function CKEDITOR({setEditorData, edd}) {
+function CKEDITOR({setEditorData, edd,title, setDisplayTitle}) {
     console.log(edd)
+    setDisplayTitle(title)
     return (
         <div>
             <CKEditor editor={ClassicEditor}

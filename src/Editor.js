@@ -5,7 +5,7 @@ import firebase from 'firebase';
 import CKEDITOR from './CKEDITOR'
 
 
-function Editor({ setTitle, setEditorData, receivedData,selectedSection}) {
+function Editor({ setTitle, setEditorData, receivedData, selectedSection, setDisplayTitle}) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Editor({ setTitle, setEditorData, receivedData,selectedSection}) {
             {
                 data.map(({ id, text }) => (
                     <div className="">
-                        <CKEDITOR edd={text.editorData} setEditorData={setEditorData}/>
+                        <CKEDITOR setDisplayTitle={setDisplayTitle} title={text.title} edd={text.editorData} setEditorData={setEditorData}/>
 
                     </div>
                 ))
