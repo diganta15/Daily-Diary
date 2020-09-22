@@ -8,7 +8,7 @@ import AddNotebook from './AddNotebook'
 
 
 
-function Sidebar() {
+function Sidebar({setSelectedSection}) {
 const [diary, setDiary] = useState([]);
 const [data, setData] = useState([])
 
@@ -34,7 +34,7 @@ const [data, setData] = useState([])
                 {
                     data.map(({ id, info }) => (
                         <div className="">
-                            <Notebooks diaryName={info.name} diaryId={info.diaryId} docId={id}    />
+                            <Notebooks diaryName={info.name} diaryId={info.diaryId} docId={id} setSelectedSection={setSelectedSection}   />
                             
                         </div>
                     ))

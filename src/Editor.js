@@ -1,14 +1,39 @@
-import React from 'react'
-import CKEditor from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import React,{useState,useEffect} from 'react'
 
-function Editor() {
+import firebaseConfig from './firebase';
+import firebase from 'firebase';
+import CKEDITOR from './CKEDITOR'
+
+
+function Editor({ setTitle, setEditorData, receivedData,selectedSection}) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+
+    firebaseConfig
+    .firestore()
+    .collection('documents')
+    .where('sectionId','==',selectedSection)
+    .onSnapshot(snapshot =>{
+        setData(snapshot.docs.map(doc => ({id:doc.id, text:doc.data()})))
+    })
+    
+
+  }, [selectedSection])
+    
+  
     return (
         <div>
-            <CKEditor editor={ClassicEditor}  
-                config={{
-                    toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'numberedList', 'bulletedList', 'imageUpload', '|', 'undo', 'redo']
-                }} />
+            {
+                data.map(({ id, text }) => (
+                    <div className="">
+                        <CKEDITOR edd={text.editorData} setEditorData={setEditorData}/>
+
+                    </div>
+                ))
+            }
+           
+            
         </div>
     )
 }

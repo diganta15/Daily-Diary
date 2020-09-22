@@ -5,7 +5,7 @@ import { BiAddToQueue} from 'react-icons/bi';
 import firebaseConfig from './firebase';
 import AddSection from './AddSection'
 
-function Notebooks({ diaryName, diaryId, docId }) {
+function Notebooks({ diaryName, diaryId, docId, setSelectedSection }) {
     const [sectionOverlay, setSectionOverlay] = useState(true);
     const [selectedDiary, setSelectedDiary] = useState('');
     const [addSectionOverlay, setAddSectionOverlay] = useState(false);
@@ -44,7 +44,7 @@ function Notebooks({ diaryName, diaryId, docId }) {
             </div>}
             <div className="section">
                 <div className={sectionOverlay ? "hidden" : "visible"}>
-                    <Section diaryId={diaryId} />
+                    <Section diaryId={diaryId} setSelectedSection={setSelectedSection}/>
                 </div>
             </div>
         </div>

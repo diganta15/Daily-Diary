@@ -2,13 +2,12 @@ import React,{useEffect, useState} from 'react'
 import firebaseConfig from './firebase';
 import { RiDeleteBin2Fill } from 'react-icons/ri'
 
-function Section({diaryId}) {
+function Section({ diaryId, setSelectedSection}) {
     const [section, setSection] = useState([]);
-    const [selectedSection, setSelectedSection] = useState('');
+    
 
     
     useEffect(() => {
-        console.log(diaryId)
         firebaseConfig.
             firestore()
             .collection('section')
@@ -19,18 +18,13 @@ function Section({diaryId}) {
     }, [])
 
     
-       
-
-
-
-    
 
     return (
         <div className="section-li">
             {
             section.map(({id, sec}) =>(
                 <ul>
-                    <li onClick={() => setSelectedSection(sec.id)}>{sec.title}</li>
+                    <li onClick={() => {setSelectedSection(sec.id);console.log(sec.id)}}>{sec.title}</li>
                     <li className="delete-section" onClick={()=>{
                         firebaseConfig
                             .firestore()
